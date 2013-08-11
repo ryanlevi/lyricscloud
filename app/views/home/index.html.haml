@@ -1,0 +1,6 @@
+= form_tag("/home/create", method: "get") do
+  = label_tag(:artist, "Artist")
+  = text_field_tag(:artist)
+  = label_tag(:title, "Title")
+  = text_field_tag(:title)
+  = submit_tag("Search")
