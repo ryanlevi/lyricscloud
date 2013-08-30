@@ -1,6 +1,17 @@
-= form_tag("/home/create", method: "get") do
-  = label_tag(:artist, "Artist")
-  = text_field_tag(:artist)
-  = label_tag(:title, "Title")
-  = text_field_tag(:title)
-  = submit_tag("Search")
+%nav.navbar.navbar-inverse{:role => "navigation"}
+  / Brand and toggle get grouped for better mobile display
+  .navbar-header
+    %button.navbar-toggle{"data-target" => ".navbar-ex1-collapse", "data-toggle" => "collapse", :type => "button"}
+      %span.sr-only Toggle navigation
+      %span.icon-bar
+      %span.icon-bar
+      %span.icon-bar
+    %a.navbar-brand{:href => ""} LyricsCloud
+  / Collect the nav links, forms, and other content for toggling
+  .collapse.navbar-collapse.navbar-ex1-collapse
+    %form.navbar-form.navbar-left{:action => "/home/create", :method => "put", :name => 'index'}
+      .form-group
+        %input.form-control{:placeholder => "Artist", :type => "text", :name => "artist"}
+      .form-group
+        %input.form-control{:placeholder => "Title/Album", :type => "text", :name => "title"}
+      %button.btn.btn-primary{:type => "submit"} Search

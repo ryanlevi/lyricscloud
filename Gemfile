@@ -11,8 +11,6 @@ group :production do
   gem 'pg'
 end
 
-gem 'json'
-
 # Gems used only for assets and not required
 # in production environments by default.
 gem 'sass-rails'
@@ -24,7 +22,6 @@ gem 'coffee-rails'
 gem 'uglifier', '>= 1.0.3'
 
 gem 'jquery-rails'
-gem "jqcloud-rails"
 
 gem 'haml-rails'
 gem 'lyricfy'

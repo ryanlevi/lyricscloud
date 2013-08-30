@@ -3,7 +3,8 @@
   var lyrics = #{raw @array.to_s.gsub('"','')};
 
   $(function() {
-    $("#cloud").jQCloud(lyrics);
+    $("#cloud").jQCloud(lyrics)
   });
-
-#cloud{:style => "width: 550px; height: 350px;"}
+.jumbotron
+  %center
+    #cloud{:style => "width:360px; height:480px;"}

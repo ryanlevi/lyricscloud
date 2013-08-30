@@ -13,4 +13,6 @@
 //= require jquery
 //= require jquery_ujs
 //= require_tree .
-//= require jqcloud
+//= require jqcloud-1.0.4.min
+//= require bootstrap.min
+//= require typeahead.min
