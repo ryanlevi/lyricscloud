@@ -6,14 +6,14 @@
       %span.icon-bar
       %span.icon-bar
       %span.icon-bar
-    %a.navbar-brand{:href => "/?artist=&title="} LyricsCloud
+    %a.navbar-brand{:href => "/"} LyricsCloud
   / Collect the nav links, forms, and other content for toggling
   .collapse.navbar-collapse.navbar-ex1-collapse
     %form.navbar-form.navbar-left{:action => "/home/index", :method => "put", :name => 'index'}
       .form-group
         %input.form-control{:placeholder => "Artist", :type => "text", :name => "artist", :value => params[:artist]}
       .form-group
-        %input.form-control{:placeholder => "Title/Album", :type => "text", :name => "title", :value => params[:title]}
+        %input.form-control{:placeholder => "Title", :type => "text", :name => "title", :value => params[:title]}
       %button.btn.btn-primary{:type => "submit"} Search
 :javascript
   var lyrics = #{raw @array.to_s.gsub('"','')};
@@ -22,11 +22,15 @@
   });
 %center
   -unless @array
-    - unless params[:artist] == nil and params[:title] == nil
-      - unless params[:artist] == "" and params[:title] == ""
-        Sorry, song not found. Check your spelling and search again.
+    - unless (params[:artist] == nil and params[:title] == nil) or (params[:artist] == "" and params[:title] == "")
+      Sorry, song not found. Check your spelling and search again.
+    - else
+      .jumbotron
+        .container
+          %h1 LyricsCloud
+          %p Type your search above and press submit!
   -else
-    #cloud{:style => "width:window.innerWidth; height:460px;"}
+    #cloud{:style => "width:window.innerWidth; height:450px;"}
 %nav.navbar.navbar-default.navbar-fixed-bottom{:role => "navigation"}
   %p.navbar-text
     Created by Ryan Levi
