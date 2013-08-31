@@ -6,12 +6,24 @@
       %span.icon-bar
       %span.icon-bar
       %span.icon-bar
-    %a.navbar-brand{:href => ""} LyricsCloud
+    %a.navbar-brand{:href => "/?artist=&title="} LyricsCloud
   / Collect the nav links, forms, and other content for toggling
   .collapse.navbar-collapse.navbar-ex1-collapse
-    %form.navbar-form.navbar-left{:action => "/home/create", :method => "put", :name => 'index'}
+    %form.navbar-form.navbar-left{:action => "/home/index", :method => "put", :name => 'index'}
       .form-group
-        %input.form-control{:placeholder => "Artist", :type => "text", :name => "artist"}
+        %input.form-control{:placeholder => "Artist", :type => "text", :name => "artist", :value => params[:artist]}
       .form-group
-        %input.form-control{:placeholder => "Title/Album", :type => "text", :name => "title"}
+        %input.form-control{:placeholder => "Title/Album", :type => "text", :name => "title", :value => params[:title]}
       %button.btn.btn-primary{:type => "submit"} Search
+:javascript
+  var lyrics = #{raw @array.to_s.gsub('"','')};
+  $(function() {
+    $("#cloud").jQCloud(lyrics)
+  });
+%center
+  -unless @array
+    - unless params[:artist] == nil and params[:title] == nil
+      - unless params[:artist] == "" and params[:title] == ""
+        Sorry, song not found. Check your spelling and search again.
+  -else
+    #cloud{:style => "width:window.innerWidth; height:480px;"}

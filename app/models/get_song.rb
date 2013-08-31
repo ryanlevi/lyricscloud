@@ -11,7 +11,7 @@ class GetSong
     fetcher = Lyricfy::Fetcher.new
     song = fetcher.search @artist, @title
     return nil unless song
-    words = song.body(" ").downcase.gsub(/[^0-9a-z ]/i, '').split(" ").sort
+    words = song.body(" ").to_s.downcase.gsub(/[^0-9a-z ]/i, '').split(" ").sort
     hash = {}
     words.each do |word|
       if hash[word]
