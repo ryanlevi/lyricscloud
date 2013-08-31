@@ -26,4 +26,9 @@
       - unless params[:artist] == "" and params[:title] == ""
         Sorry, song not found. Check your spelling and search again.
   -else
-    #cloud{:style => "width:window.innerWidth; height:480px;"}
+    #cloud{:style => "width:window.innerWidth; height:460px;"}
+%nav.navbar.navbar-default.navbar-fixed-bottom{:role => "navigation"}
+  %p.navbar-text
+    Created by Ryan Levi
+  %p.navbar-text.pull-right
+    %a(href="https://github.com/ryanlevi/lyricscloud" target="_blank") Source
