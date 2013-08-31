@@ -1,8 +1,8 @@
-== LyricsCloud
+= LyricsCloud
 
 A website that creates word clouds from song lyrics.
 
-= To Do:
+== To Do:
 
 - Add social features (share on facebook, twitter, etc) -- but this is annoying to some. How about just a share link that copies the link to clipboard?
 - Add song playing in the background when user searches. (Use YouTube? -- Probably best way to implement, but what if it plays something other than the song? And what if the user doesn't want song to play? Maybe add a play button to start it, or a Search on YouTube link.)
