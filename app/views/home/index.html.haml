@@ -24,11 +24,12 @@
   body { background-color: #eee; }
 %center
   -unless @array
-    - unless (params[:artist] == nil and params[:title] == nil) or (params[:artist] == "" and params[:title] == "")
-      Sorry, song not found. Check your spelling and search again.
-    - else
-      .jumbotron
-        .container
+    .jumbotron
+      .container
+        - unless (params[:artist] == nil and params[:title] == nil) or (params[:artist] == "" and params[:title] == "")
+          %br
+          %h3 Sorry, song not found. Check your spelling and search again.
+        - else
           %br
           %h1 LyricsCloud
           %p Type your search above and press submit!
