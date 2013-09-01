@@ -3,7 +3,6 @@
 <head>
   <title>The change you wanted was rejected (422)</title>
   <style type="text/css">
-    body { background-color: #fff; color: #666; text-align: center; font-family: arial, sans-serif; }
     div.dialog {
       width: 25em;
       padding: 0 4em;
@@ -14,13 +13,79 @@
     }
     h1 { font-size: 100%; color: #f00; line-height: 1.5em; }
   </style>
-</head>
-
-<body>
+    <script>
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+      
+      ga('create', 'UA-43685105-1', 'ryanlevi.com');
+      ga('send', 'pageview');
+    </script>
+    <title>LyricsCloud</title>
+    <link href="/assets/application.css?body=1" media="screen" rel="stylesheet" />
+    <link href="/assets/bootstrap.min.css?body=1" media="screen" rel="stylesheet" />
+    <link href="/assets/home.css?body=1" media="screen" rel="stylesheet" />
+    <link href="/assets/jqcloud.css?body=1" media="screen" rel="stylesheet" />
+    <script src="/assets/jquery.js?body=1"></script>
+    <script src="/assets/jquery_ujs.js?body=1"></script>
+    <script src="/assets/bootstrap.min.js?body=1"></script>
+    <script src="/assets/home.js?body=1"></script>
+    <script src="/assets/jqcloud-1.0.4.min.js?body=1"></script>
+    <script src="/assets/typeahead.min.js?body=1"></script>
+    <script src="/assets/application.js?body=1"></script>
+    <meta content='width=device-width, initial-scale=1, maximum-scale=1' name='viewport'>
+  </head>
+  <body>
+    <nav class='navbar navbar-inverse navbar-fixed-top' role='navigation'>
+      <!-- Brand and toggle get grouped for better mobile display -->
+      <div class='navbar-header'>
+        <button class='navbar-toggle' data-target='.navbar-ex1-collapse' data-toggle='collapse' type='button'>
+          <span class='sr-only'>Toggle navigation</span>
+          <span class='icon-bar'></span>
+          <span class='icon-bar'></span>
+          <span class='icon-bar'></span>
+        </button>
+        <a class='navbar-brand' href='/'>LyricsCloud</a>
+      </div>
+      <!-- Collect the nav links, forms, and other content for toggling -->
+      <div class='collapse navbar-collapse navbar-ex1-collapse'>
+        <form action='/home/index' class='navbar-form navbar-left' method='put' name='index'>
+          <div class='form-group'>
+            <input class='form-control' name='artist' placeholder='Artist' type='text' value=''>
+          </div>
+          <div class='form-group'>
+            <input class='form-control' name='title' placeholder='Title' type='text' value=''>
+          </div>
+          <button class='btn btn-primary' type='submit'>Search</button>
+        </form>
+      </div>
+    </nav>
+    <script>
+      var lyrics = ;
+      $(function() {
+        $("#cloud").jQCloud(lyrics)
+      });
+    </script>
+    <style>
+      body { background-color: #eee; }
+    </style>
+    <center>
+      <div class='jumbotron'>
   <!-- This file lives in public/422.html -->
   <div class="dialog">
-    <h1>The change you wanted was rejected.</h1>
+    <h3>The change you wanted was rejected.</h3>
     <p>Maybe you tried to change something you didn't have access to.</p>
   </div>
-</body>
+      </div>
+    </center>
+    <nav class='navbar navbar-default navbar-fixed-bottom' role='navigation'>
+      <p class='navbar-text'>
+        Created by Ryan Levi
+      </p>
+      <p class='navbar-text pull-right'>
+        <a href='https://github.com/ryanlevi/lyricscloud' target='_blank'>Source</a>
+      </p>
+    </nav>
+  </body>
 </html>

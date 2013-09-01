@@ -23,12 +23,12 @@ class GetSong
     @words_list = hash.sort_by{|k,v| v}.reverse
   end
 
-  def get_lyrics
+  def get_lyrics(maxsize = -1)
     @array = []
     return nil unless @words_list
     @words_list.each do |i|
       @array.push "{text: \'#{i[0]}\', weight: #{i[1]}}"
     end
-    @array
+    @array[0..maxsize]
   end
 end

@@ -22,6 +22,7 @@ gem 'coffee-rails'
 gem 'uglifier', '>= 1.0.3'
 
 gem 'jquery-rails'
+gem 'debugger', :group => [:development, :test]
 
 gem 'haml-rails'
 gem 'lyricfy'
