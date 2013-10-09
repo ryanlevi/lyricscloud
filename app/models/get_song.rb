@@ -31,4 +31,27 @@ class GetSong
     end
     @array[0..maxsize]
   end
+
+  def remove_small_words(small_words = ["the", "i", "you", "and", "a"])
+    new_list = []
+    return nil unless @words_list
+    @words_list.each do |x|
+      unless small_words.include? x[0]
+        new_list.push x
+      end
+    end
+    @words_list = new_list
+  end
+
+  def correct_misspellings(corrections={"im"=>"I'm"})
+    @words_list.each do |x|
+      corrections.each do |y|
+        if x[0] == y[0]
+          x[0] = y[1]
+        end
+      end
+    end
+  end
+    
+
 end
