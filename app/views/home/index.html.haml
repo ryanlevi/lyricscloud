@@ -16,3 +16,17 @@
           %p Type your search above and press submit!
   -else
     #cloud{:style => "width:window.innerWidth; height:450px;"}
+    Songs In This LyricsCloud:
+    <br>
+    - if @album_tracks
+      - @album_tracks.each do |track|
+        = track
+        <br>
+    - elsif @discography_tracks
+      - @discography_tracks.each do |track|
+        = track
+        <br>
+    - else
+      = params[:title].capitalize
+      <br><a href="mailto:">Something missing?</a>
+      <br><br><br><br><br>
